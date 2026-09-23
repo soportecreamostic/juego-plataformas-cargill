@@ -17,9 +17,9 @@ export default class MenuScene extends Phaser.Scene {
 
     preload() {
 
-        this.load.svg(
-            "cargillLogo",
-            "assets/images/cargill-logo.svg",
+        this.load.image(
+            "portadaCargill",
+            "assets/images/portada-cargill.png"
         );
     }
 
@@ -48,21 +48,21 @@ export default class MenuScene extends Phaser.Scene {
         // DECORACIÓN
         // --------------------------------------
 
-        this.createDecorations();
+        
 
 
         // --------------------------------------
         // LOGO
         // --------------------------------------
 
-        this.createLogo();
+       
 
 
         // --------------------------------------
         // TÍTULO
         // --------------------------------------
 
-        this.createTitle();
+        
 
 
         // --------------------------------------
@@ -113,202 +113,17 @@ export default class MenuScene extends Phaser.Scene {
             "#F5F9ED"
         );
 
-
         const background =
-            this.add.graphics();
+            this.add.image(
+                400,
+                225,
+                "portadaCargill"
+            );
 
-
-        // --------------------------------------
-        // COLOR BASE
-        // --------------------------------------
-
-        background.fillStyle(
-            0xF5F9ED,
-            1
-        );
-
-        background.fillRect(
-            0,
-            0,
+        background.setDisplaySize(
             800,
             450
         );
-
-
-        // --------------------------------------
-        // VERDE PRINCIPAL
-        // --------------------------------------
-
-        background.fillStyle(
-            0x398245,
-            1
-        );
-
-        background.fillCircle(
-            40,
-            80,
-            150
-        );
-
-
-        background.fillCircle(
-            760,
-            370,
-            190
-        );
-
-
-        // --------------------------------------
-        // VERDE OSCURO
-        // --------------------------------------
-
-        background.fillStyle(
-            0x012912,
-            1
-        );
-
-        background.fillRect(
-            0,
-            390,
-            800,
-            60
-        );
-
-
-        background.fillCircle(
-            790,
-            40,
-            120
-        );
-
-
-        // --------------------------------------
-        // VERDE LIMA
-        // --------------------------------------
-
-        background.fillStyle(
-            0xBDE588,
-            1
-        );
-
-        background.fillCircle(
-            100,
-            0,
-            95
-        );
-
-
-        background.fillCircle(
-            720,
-            450,
-            110
-        );
-
-
-        // --------------------------------------
-        // FORMAS ORGÁNICAS CENTRALES
-        // --------------------------------------
-
-        background.fillStyle(
-            0xBDE588,
-            0.75
-        );
-
-        background.fillEllipse(
-            165,
-            105,
-            170,
-            90
-        );
-
-
-        background.fillStyle(
-            0x398245,
-            0.10
-        );
-
-        background.fillEllipse(
-            625,
-            175,
-            310,
-            170
-        );
-
-
-        // --------------------------------------
-        // LÍNEAS DECORATIVAS
-        // --------------------------------------
-
-        background.lineStyle(
-            2,
-            0x012912,
-            0.5
-        );
-
-        background.strokeEllipse(
-            150,
-            112,
-            175,
-            92
-        );
-
-
-        background.lineStyle(
-            2,
-            0x398245,
-            0.45
-        );
-
-        background.lineBetween(
-            25,
-            360,
-            180,
-            315
-        );
-
-        background.lineBetween(
-            180,
-            315,
-            300,
-            350
-        );
-
-
-        // --------------------------------------
-        // PUNTOS DECORATIVOS
-        // --------------------------------------
-
-        const dotColor =
-            0x398245;
-
-        const dots = [
-
-            [640, 65],
-            [660, 65],
-            [680, 65],
-
-            [640, 85],
-            [660, 85],
-            [680, 85],
-
-            [640, 105],
-            [660, 105],
-            [680, 105]
-
-        ];
-
-
-        dots.forEach(
-            ([x, y]) => {
-
-                background.fillCircle(
-                    x,
-                    y,
-                    4
-                );
-            }
-        );
-
 
         background.setDepth(-10);
     }
