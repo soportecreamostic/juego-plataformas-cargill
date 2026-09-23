@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="64" viewBox="0 0 512 64">
+<defs>
+  <linearGradient id="gBody" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#4D9A59"/>
+    <stop offset="1" stop-color="#166338"/>
+  </linearGradient>
+  <linearGradient id="gCap" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#4A9658"/>
+    <stop offset="1" stop-color="#0F5630"/>
+  </linearGradient>
+  <linearGradient id="gSkin" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F7C07D"/>
+    <stop offset="1" stop-color="#D88A4C"/>
+  </linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="1.2" stdDeviation="0.8" flood-color="#012912" flood-opacity=".22"/>
+  </filter>
+  <g id="head" stroke="#231F20" stroke-width="1.05" stroke-linejoin="round">
+    <path d="M18 14 Q18 6 32 5 Q46 6 46 15 L42 18 Q36 12 32 12 Q25 12 21 18Z" fill="url(#gCap)"/>
+    <path d="M20 11 Q27 4.5 37 6 Q43 7 46 12 L40 16 Q34 10 26 12Z" fill="#F5F9ED"/>
+    <text x="33" y="11.2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#231F20" stroke="none">Cargill</text>
+    <path d="M22 17 Q23 11 32 10 Q41 11 42 17 L40 24 H24Z" fill="url(#gSkin)"/>
+    <path d="M23 17 Q21 16 20 18" fill="none"/>
+    <circle cx="27.5" cy="17.5" r="0.95" fill="#231F20" stroke="none"/>
+    <circle cx="36.5" cy="17.5" r="0.95" fill="#231F20" stroke="none"/>
+    <path d="M29 20 Q32 22 35 20" fill="none"/>
+  </g>
+
+  <g id="torso" stroke="#231F20" stroke-width="1.05" stroke-linejoin="round">
+    <path d="M23 27 Q32 23 41 27 L44 44 Q42 48 37 48 H27 Q22 48 20 44Z" fill="url(#gBody)"/>
+    <path d="M24 27 L20 35" stroke="#F5F9ED" stroke-width="4"/>
+    <path d="M40 27 L44 35" stroke="#F5F9ED" stroke-width="4"/>
+    <path d="M24 28 L21 38 M40 28 L43 38" stroke="#BDE588" stroke-width="1"/>
+    <path d="M28 27 L27 44 M36 27 L37 44" stroke="#9ECF78" stroke-width=".8" opacity=".65"/>
+    <rect x="28.5" y="33" width="7" height="8" rx="1" fill="#F5F9ED"/>
+    <path d="M32 33 V41" stroke="#398245" stroke-width=".7"/>
+    <circle cx="32" cy="36" r="1" fill="#BDE588" stroke="none"/>
+    <path d="M25 40 H39" stroke="#0B4D2B" stroke-width="1.4"/>
+  </g>
+
+  <g id="boot" stroke="#231F20" stroke-width="1.0" stroke-linejoin="round">
+    <path d="M0 0 Q4 2 7 1 L8 8 H1 Q-2 7 0 4Z" fill="#6E4525"/>
+    <path d="M0 7 H9 Q10 9 7 10 H0 Q-2 9 0 7Z" fill="#4A2E1A"/>
+  </g>
+
+  <g id="armDownL" stroke="#231F20" stroke-width="1.0">
+    <path d="M22 28 Q17 31 17 38 L16 44 Q17 47 20 45 L22 38 L26 31Z" fill="#F5F9ED"/>
+    <circle cx="18" cy="45" r="2.2" fill="url(#gSkin)"/>
+  </g>
+  <g id="armDownR" stroke="#231F20" stroke-width="1.0">
+    <path d="M42 28 Q47 31 47 38 L48 44 Q47 47 44 45 L42 38 L38 31Z" fill="#F5F9ED"/>
+    <circle cx="46" cy="45" r="2.2" fill="url(#gSkin)"/>
+  </g>
+</defs>
+
+<!-- FRAME 0 IDLE -->
+<g transform="translate(0,0)" filter="url(#shadow)">
+  <ellipse cx="32" cy="61" rx="15" ry="2" fill="#012912" opacity=".12"/>
+  <use href="#torso"/>
+  <use href="#armDownL"/>
+  <use href="#armDownR"/>
+  <g stroke="#231F20" stroke-width="1.05">
+    <path d="M27 47 L26 57" stroke="#166338" stroke-width="7"/>
+    <path d="M37 47 L38 57" stroke="#166338" stroke-width="7"/>
+    <use href="#boot" transform="translate(23,56)"/>
+    <use href="#boot" transform="translate(37,56) scale(.9,1)"/>
+  </g>
+  <use href="#head"/>
+</g>
+
+<!-- FRAME 1 IDLE -->
+<g transform="translate(64,0)" filter="url(#shadow)">
+  <ellipse cx="32" cy="61" rx="15" ry="2" fill="#012912" opacity=".10"/>
+  <use href="#torso"/>
+  <use href="#armDownL"/>
+  <use href="#armDownR"/>
+  <g stroke="#231F20" stroke-width="1.05">
+    <path d="M27 47 L27 57" stroke="#166338" stroke-width="7"/>
+    <path d="M37 47 L37 57" stroke="#166338" stroke-width="7"/>
+    <use href="#boot" transform="translate(24,56)"/>
+    <use href="#boot" transform="translate(36,56)"/>
+  </g>
+  <use href="#head" transform="translate(0,-.5)"/>
+</g>
+
+<!-- FRAME 2 WALK -->
+<g transform="translate(128,0)" filter="url(#shadow)">
+  <ellipse cx="32" cy="61" rx="17" ry="2" fill="#012912" opacity=".10"/>
+  <use href="#torso"/>
+  <g stroke="#231F20" stroke-width="1">
+    <path d="M22 29 Q17 33 18 40 L20 46 Q21 48 23 46 L23 38 L27 31Z" fill="#F5F9ED"/>
+    <circle cx="22" cy="46" r="2.2" fill="url(#gSkin)"/>
+    <path d="M42 29 Q48 32 50 37 L52 42 Q51 45 48 44 L44 38 L39 31Z" fill="#F5F9ED"/>
+    <circle cx="50" cy="43" r="2.2" fill="url(#gSkin)"/>
+    <path d="M27 47 L20 55" stroke="#166338" stroke-width="7"/>
+    <path d="M38 47 L44 57" stroke="#166338" stroke-width="7"/>
+    <use href="#boot" transform="translate(17,54) rotate(-14)"/>
+    <use href="#boot" transform="translate(42,55) rotate(12)"/>
+  </g>
+  <use href="#head"/>
+</g>
+
+<!-- FRAME 3 WALK -->
+<g transform="translate(192,0)" filter="url(#shadow)">
+  <ellipse cx="32" cy="61" rx="17" ry="2" fill="#012912" opacity=".10"/>
+  <use href="#torso"/>
+  <g stroke="#231F20" stroke-width="1">
+    <path d="M22 29 Q17 31 15 36 L13 42 Q14 45 17 43 L22 38 L27 31Z" fill="#F5F9ED"/>
+    <circle cx="15" cy="43" r="2.2" fill="url(#gSkin)"/>
+    <path d="M42 29 Q48 31 48 38 L47 45 Q45 47 43 44 L43 38 L39 31Z" fill="#F5F9ED"/>
+    <circle cx="46" cy="45" r="2.2" fill="url(#gSkin)"/>
+    <path d="M27 47 L34 57" stroke="#166338" stroke-width="7"/>
+    <path d="M38 47 L28 57" stroke="#166338" stroke-width="7"/>
+    <use href="#boot" transform="translate(29,55) rotate(13)"/>
+    <use href="#boot" transform="translate(21,55) rotate(-18)"/>
+  </g>
+  <use href="#head"/>
+</g>
+
+<!-- FRAME 4 WALK -->
+<g transform="translate(256,0)" filter="url(#shadow)">
+  <ellipse cx="32" cy="61" rx="17" ry="2" fill="#012912" opacity=".10"/>
+  <use href="#torso"/>
+  <g stroke="#231F20" stroke-width="1">
+    <path d="M22 29 Q17 32 17 38 L18 45 Q20 47 22 44 L22 38 L27 31Z" fill="#F5F9ED"/>
+    <circle cx="20" cy="45" r="2.2" fill="url(#gSkin)"/>
+    <path d="M42 29 Q48 33 50 39 L52 44 Q51 47 48 45 L44 39 L39 31Z" fill="#F5F9ED"/>
+    <circle cx="50" cy="45" r="2.2" fill="url(#gSkin)"/>
+    <path d="M27 47 L20 57" stroke="#166338" stroke-width="7"/>
+    <path d="M38 47 L44 55" stroke="#166338" stroke-width="7"/>
+    <use href="#boot" transform="translate(17,56) rotate(-16)"/>
+    <use href="#boot" transform="translate(42,54) rotate(8)"/>
+  </g>
+  <use href="#head" transform="translate(0,.2)"/>
+</g>
+
+<!-- FRAME 5 WALK -->
+<g transform="translate(320,0)" filter="url(#shadow)">
+  <ellipse cx="32" cy="61" rx="17" ry="2" fill="#012912" opacity=".10"/>
+  <use href="#torso"/>
+  <g stroke="#231F20" stroke-width="1">
+    <path d="M22 29 Q17 32 15 37 L13 42 Q14 45 17 43 L22 38 L27 31Z" fill="#F5F9ED"/>
+    <circle cx="15" cy="43" r="2.2" fill="url(#gSkin)"/>
+    <path d="M42 29 Q48 31 48 38 L47 45 Q45 47 43 44 L43 38 L39 31Z" fill="#F5F9ED"/>
+    <circle cx="46" cy="45" r="2.2" fill="url(#gSkin)"/>
+    <path d="M27 47 L34 56" stroke="#166338" stroke-width="7"/>
+    <path d="M38 47 L27 56" stroke="#166338" stroke-width="7"/>
+    <use href="#boot" transform="translate(29,54) rotate(12)"/>
+    <use href="#boot" transform="translate(20,54) rotate(-17)"/>
+  </g>
+  <use href="#head" transform="translate(0,.2)"/>
+</g>
+
+<!-- FRAME 6 JUMP -->
+<g transform="translate(384,0)" filter="url(#shadow)">
+  <use href="#torso" transform="translate(0,-2)"/>
+  <g stroke="#231F20" stroke-width="1">
+    <path d="M23 28 Q18 24 16 19 L14 15 Q16 12 19 15 L25 23 L28 28Z" fill="#F5F9ED"/>
+    <circle cx="16" cy="15" r="2.2" fill="url(#gSkin)"/>
+    <path d="M41 28 Q46 24 48 18 L50 14 Q52 12 53 15 L51 22 L45 29Z" fill="#F5F9ED"/>
+    <circle cx="51" cy="14" r="2.2" fill="url(#gSkin)"/>
+    <path d="M27 46 Q22 50 19 55" stroke="#166338" stroke-width="7"/>
+    <path d="M37 46 Q42 51 46 54" stroke="#166338" stroke-width="7"/>
+    <use href="#boot" transform="translate(15,53) rotate(-15)"/>
+    <use href="#boot" transform="translate(43,52) rotate(13)"/>
+  </g>
+  <use href="#head" transform="translate(0,-2)"/>
+</g>
+
+<!-- FRAME 7 JUMP -->
+<g transform="translate(448,0)" filter="url(#shadow)">
+  <use href="#torso" transform="translate(0,-3)"/>
+  <g stroke="#231F20" stroke-width="1">
+    <path d="M23 28 Q19 23 18 17 L17 13 Q20 11 22 14 L27 24 L29 28Z" fill="#F5F9ED"/>
+    <circle cx="19" cy="13" r="2.2" fill="url(#gSkin)"/>
+    <path d="M41 28 Q46 23 47 17 L48 13 Q51 12 52 15 L50 23 L45 29Z" fill="#F5F9ED"/>
+    <circle cx="50" cy="14" r="2.2" fill="url(#gSkin)"/>
+    <path d="M27 46 Q23 51 18 53" stroke="#166338" stroke-width="7"/>
+    <path d="M37 46 Q42 51 48 52" stroke="#166338" stroke-width="7"/>
+    <use href="#boot" transform="translate(14,52) rotate(-14)"/>
+    <use href="#boot" transform="translate(45,51) rotate(14)"/>
+  </g>
+  <use href="#head" transform="translate(0,-3)"/>
+</g>
+</svg>
