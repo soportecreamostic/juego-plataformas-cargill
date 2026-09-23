@@ -203,13 +203,49 @@ export default class Enemy {
         // -----------------------------
 
         if (
-            canDamage &&
-            !player.isInvulnerable &&
-            this.scene.physics.overlap(
-                player,
-                this.bodyObject
-            )
-        ) {
+    canDamage &&
+    !player.isInvulnerable &&
+    this.scene.physics.overlap(
+        player,
+        this.bodyObject
+    )
+) {
+
+            // ======================================
+            // ATAQUE DESDE ARRIBA
+            // ======================================
+
+            const playerBody = player.body;
+            const enemyBody = this.bodyObject.body;
+
+            const isFalling =
+                playerBody.velocity.y > 0;
+
+            const playerBottom =
+                playerBody.bottom;
+
+            const enemyTop =
+                enemyBody.top;
+
+            const hitFromAbove =
+                playerBottom <= enemyTop + 12;
+
+            if (
+                isFalling &&
+                hitFromAbove
+            ) {
+
+                this.defeat();
+
+                // Rebote del jugador
+                player.setVelocityY(-320);
+
+                return;
+            }
+
+            // ======================================
+            // CONTACTO LATERAL
+            // ======================================
 
             this.hitPlayer(player);
         }
@@ -233,6 +269,39 @@ export default class Enemy {
         player.setVelocityY(-220);
 
         this.playHitEffect();
+    }
+
+    defeat() {
+
+        if (!this.isActive) {
+            return;
+        }
+
+        this.isActive = false;
+
+        // Detener movimiento
+        this.bodyObject.body.setVelocity(0, 0);
+
+        // Desactivar cuerpo físico
+        this.bodyObject.body.enable = false;
+
+        // Efecto visual de derrota
+        this.scene.tweens.add({
+
+            targets: this.visual,
+
+            scale: 1.25,
+            alpha: 0,
+
+            duration: 180,
+
+            ease: "Quad.easeOut",
+
+            onComplete: () => {
+
+                this.visual.setVisible(false);
+            }
+        });
     }
 
     playHitEffect() {

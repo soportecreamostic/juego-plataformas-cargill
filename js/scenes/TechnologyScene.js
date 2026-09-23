@@ -986,7 +986,7 @@ export default class TechnologyScene extends Phaser.Scene {
             new PowerBlock(
                 this,
                 1010,
-                200,
+                210,
                 {
                     rewardType: "technology",
                     duration: 10000
